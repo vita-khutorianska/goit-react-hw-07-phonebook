@@ -1,27 +1,17 @@
-import shortid from 'shortid';
 import { createAction } from '@reduxjs/toolkit';
 
-// const addContact = ({ name, number }) => ({
-//   type: types.ADD,
-//   payload: {
-//     name,
-//     number: number,
-//     id: shortid.generate(),
-//   },
-// });
-// const deleteContact = contactId => ({
-//   type: types.DELETE,
-//   payload: contactId,
-// });
-// const filterChange = value => ({
-//   type: types.CHANGE_FILTER,
-//   payload: value,
-// });
+export const getContactsRequest = createAction('contacts/getContactsRequest');
+export const getContactsSuccess = createAction('contacts/getContactsSuccess');
+export const getContactsFailure = createAction('contacts/getContactsFailurer');
 
-export const addContact = createAction('contacts/add', ({ name, number }) => ({
-  payload: { id: shortid.generate(), name, number },
-}));
-export const filterChange = createAction('contacts/filter');
-export const deleteContact = createAction('contacts/delete');
-// eslint-disable-next-line import/no-anonymous-default-export
-// export default { addContact, filterChange, deleteContact };
+export const addContactsRequest = createAction('contacts/addContactsRequest');
+export const addSuccess = createAction('contacts/addSuccess');
+export const addFailure = createAction('contacts/addFailure');
+
+export const filterChange = createAction('contacts/filterChange');
+
+export const deleteContactsRequest = createAction(
+  'contacts/deleteContactsRequest',
+);
+export const deleteChangeSuccess = createAction('contacts/deleteChangeSuccess');
+export const deleteChangeFailure = createAction('contacts/deleteChangeFailure');
