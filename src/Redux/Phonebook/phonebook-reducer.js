@@ -9,34 +9,24 @@ const items = createReducer([], {
     ...state.filter(({ id }) => id !== payload),
   ],
 });
-
+const error = createReducer(null, {});
 const filter = createReducer('', {
   [actions.filterChange]: (state, { payload }) => payload,
+});
+const loading = createReducer(false, {
+  [getContactsRequest]: () => true,
+  [getContactsSuccess]: () => false,
+  [getContactsFailure]: () => false,
+  [addContactsRequest]: () => true,
+  [addSuccess]: () => false,
+  [addFailure]: () => false,
+  [filterChange]: () => false,
+  [deleteContactsRequest]: () => true,
+  [deleteChangeSuccess]: () => false,
+  [deleteChangeFailure]: () => false,
 });
 
 export default combineReducers({
   items,
   filter,
 });
-// const items = (state = [], { type, payload }) => {
-//   switch (type) {
-//     case types.ADD:
-//       return [...state, payload];
-
-//     case types.DELETE:
-//       return state.filter(({ id }) => id !== payload);
-
-//     default:
-//       return state;
-//   }
-// };
-
-// const filter = (state = '', { type, payload }) => {
-//   switch (type) {
-//     case types.CHANGE_FILTER:
-//       return payload;
-
-//     default:
-//       return state;
-//   }
-// };
