@@ -8,11 +8,9 @@ import {
   deleteContactsRequest,
   deleteChangeSuccess,
   deleteChangeFailure,
-} from './phone-actions';
-// * as actions
-import axios from 'axios';
+} from './phonebook-action';
 
-axios.defaults.baseURL = 'http://localhost:4040';
+import axios from 'axios';
 
 export const getContact = () => async dispatch => {
   dispatch(getContactsRequest());
