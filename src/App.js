@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-// import LinearProgress from '@material-ui/core/LinearProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import ContactForm from './Components/ContactForm';
 import ContactList from './Components/ContactList';
 import Filter from './Components/Filter';
@@ -18,7 +18,7 @@ class App extends Component {
         <div>
           <h1>
             Phonebook
-            {/* {this.props.isLoading && <LinearProgress color="secondary" />} */}
+            {this.props.isLoading && <CircularProgress color="secondary" />}
           </h1>
 
           <ContactForm />
