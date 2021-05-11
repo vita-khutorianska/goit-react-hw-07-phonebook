@@ -21,10 +21,6 @@ export const getContact = () => async dispatch => {
   } catch (error) {
     dispatch(getContactsFailure(error));
   }
-  // axios
-  //   .get("/contacts")
-  //   .then(({ data }) => dispatch(getContactsSuccess(data)))
-  //   .catch((err) => dispatch(getContactsFailure(err)));
 };
 
 export const addContact = ({ name, number }) => (dispatch, getState) => {

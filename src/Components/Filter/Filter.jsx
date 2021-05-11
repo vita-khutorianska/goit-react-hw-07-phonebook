@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './Filter.module.css';
 import { connect } from 'react-redux';
 import * as actions from '../../Redux/Phonebook/phonebook-action';
+import { getFilter } from '../../Redux/Phonebook/phonebook-selectors';
 const Filter = ({ value, onChange }) => (
   <div className={styles.container}>
     <label className={styles.label}>
@@ -20,7 +21,7 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state, props) => {
-  return { value: state.contacts.filter };
+  return { value: getFilter(state) };
 };
 
 const mapDispatchToProps = dispatch => {
