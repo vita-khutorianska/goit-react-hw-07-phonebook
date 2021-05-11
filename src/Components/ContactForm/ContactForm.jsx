@@ -1,8 +1,8 @@
 import shortid from 'shortid';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContact } from '../../Redux/Phonebook/operationsApi';
 import styles from './ContactForm.module.css';
+import { addContact } from '../../Redux/Phonebook/operationsApi';
 import { getAllContacts } from '../../Redux/Phonebook/phonebook-selectors';
 class ContactForm extends Component {
   state = {
