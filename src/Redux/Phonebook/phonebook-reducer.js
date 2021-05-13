@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
+// eslint-disable-next-line no-unused-vars
 import { createSelector } from 'reselect';
 import {
   getContactsSuccess,

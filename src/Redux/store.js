@@ -1,4 +1,5 @@
 import {
+  persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
